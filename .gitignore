@@ -1,0 +1,6 @@
+# Ignore compiled C++ files
+*.o
+main
+
+# Ignore .vscode folder
+.vscode/
