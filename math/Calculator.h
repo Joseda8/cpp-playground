@@ -4,7 +4,8 @@
 /**
  * @brief The Calculator class provides basic arithmetic operations.
  */
-class Calculator {
+class Calculator
+{
 public:
     /**
      * @brief Constructor for Calculator class.
@@ -43,6 +44,13 @@ public:
      * @details Prints an error message and returns 0 if b is 0.
      */
     double divide(double a, double b);
+
+    /**
+     * @brief Computes the Fibonacci of a given number.
+     * @param num The number to compute the Fibonacci of.
+     * @return The result of Fib(num).
+     */
+    int fibonacci(int a);
 };
 
 #endif

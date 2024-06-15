@@ -14,5 +14,6 @@ int main()
     std::cout << "Result: " << calc.subtract(num1, num2) << std::endl;
     std::cout << "Result: " << calc.multiply(num1, num2) << std::endl;
     std::cout << "Result: " << calc.divide(num1, num2) << std::endl;
+    std::cout << "Result: " << calc.fibonacci(num1) << std::endl;
     return 0;
 }
