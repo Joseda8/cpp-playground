@@ -18,7 +18,7 @@ public:
      * @param b The second number.
      * @return The result of adding a and b.
      */
-    double add(double a, double b);
+    static double add(double a, double b);
 
     /**
      * @brief Subtracts the second number from the first.
@@ -26,7 +26,7 @@ public:
      * @param b The second number.
      * @return The result of subtracting b from a.
      */
-    double subtract(double a, double b);
+    static double subtract(double a, double b);
 
     /**
      * @brief Multiplies two numbers.
@@ -34,7 +34,7 @@ public:
      * @param b The second number.
      * @return The result of multiplying a and b.
      */
-    double multiply(double a, double b);
+    static double multiply(double a, double b);
 
     /**
      * @brief Divides the first number by the second.
@@ -43,14 +43,14 @@ public:
      * @return The result of dividing a by b.
      * @details Prints an error message and returns 0 if b is 0.
      */
-    double divide(double a, double b);
+    static double divide(double a, double b);
 
     /**
      * @brief Computes the Fibonacci of a given number.
      * @param num The number to compute the Fibonacci of.
      * @return The result of Fib(num).
      */
-    int fibonacci(int a);
+    static int fibonacci(int a);
 };
 
 #endif
