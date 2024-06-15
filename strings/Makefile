@@ -25,6 +25,7 @@ $(TARGET): $(OBJS:%=$(BUILD_DIR)/%)
 
 # Rule to compile the source files into object files
 $(BUILD_DIR)/%.o: %.cpp
+	@mkdir -p $(dir $@)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 # Rule to run the executable

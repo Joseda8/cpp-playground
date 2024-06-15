@@ -8,7 +8,9 @@ CXXFLAGS = -Wall -Wextra -std=c++17
 TARGET = main
 
 # Define the source files
-SRCS = main.cpp Calculator.cpp
+SRCS = main.cpp \
+       models/course/Course.cpp \
+       models/student/Student.cpp
 
 # Define the object files
 OBJS = $(SRCS:.cpp=.o)
@@ -17,11 +19,11 @@ OBJS = $(SRCS:.cpp=.o)
 BUILD_DIR = build
 
 # Default target
-all: $(TARGET)
+all: $(BUILD_DIR)/$(TARGET)
 
 # Rule to link the object files to create the executable
-$(TARGET): $(OBJS:%=$(BUILD_DIR)/%)
-	$(CXX) $(CXXFLAGS) -o $(BUILD_DIR)/$(TARGET) $(OBJS:%=$(BUILD_DIR)/%)
+$(BUILD_DIR)/$(TARGET): $(OBJS:%=$(BUILD_DIR)/%)
+	$(CXX) $(CXXFLAGS) -o $@ $^
 
 # Rule to compile the source files into object files
 $(BUILD_DIR)/%.o: %.cpp
@@ -29,7 +31,7 @@ $(BUILD_DIR)/%.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 # Rule to run the executable
-run:
+run: $(BUILD_DIR)/$(TARGET)
 	./$(BUILD_DIR)/$(TARGET)
 
 # Rule to clean the build directory
