@@ -5,7 +5,7 @@
 #include <vector>
 
 /**
- * @brief Represents a course in a university.
+ * @brief Course in a university.
  */
 class Course
 {
@@ -52,10 +52,10 @@ public:
 
     /**
      * @brief Add a student to the course.
-     * @param student_name The name of the student to add.
      * @param student_id The unique identifier of the student.
+     * @return True is the student was added successfully. false otherwise.
      */
-    void add_student(const std::string &student_name, int student_id);
+    bool add_student(int student_id);
 
     /**
      * @brief Get the number of enrolled students.
@@ -64,18 +64,10 @@ public:
     int get_num_students() const;
 
     /**
-     * @brief Get the name of a student enrolled in the course.
-     * @param index Index of the student in the array.
-     * @return The name of the student at the given index.
+     * @brief Get the IDs of the students enrolled in the course.
+     * @return The array of students participating in the course.
      */
-    std::string get_student_name(int index) const;
-
-    /**
-     * @brief Get the ID of a student enrolled in the course.
-     * @param index Index of the student in the array.
-     * @return The ID of the student at the given index.
-     */
-    int get_student_id(int index) const;
+    std::vector<int> get_students() const;
 
 private:
     // Unique identifier of the course.
